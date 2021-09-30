@@ -3,7 +3,7 @@ package com.filedownloader;
 import com.filedownloader.httpclient.DefaultHttpClient;
 import com.filedownloader.httpclient.HttpClient;
 
-public class PRDownloaderConfig {
+public class FileDownloaderConfig {
 
     private int readTimeout;
     private int connectTimeout;
@@ -11,7 +11,7 @@ public class PRDownloaderConfig {
     private HttpClient httpClient;
     private boolean databaseEnabled;
 
-    private PRDownloaderConfig(Builder builder) {
+    private FileDownloaderConfig(Builder builder) {
         this.readTimeout = builder.readTimeout;
         this.connectTimeout = builder.connectTimeout;
         this.userAgent = builder.userAgent;
@@ -96,8 +96,8 @@ public class PRDownloaderConfig {
             return this;
         }
 
-        public PRDownloaderConfig build() {
-            return new PRDownloaderConfig(this);
+        public FileDownloaderConfig build() {
+            return new FileDownloaderConfig(this);
         }
     }
 }

@@ -3,8 +3,8 @@ package com.filedownloader.internal;
 import android.content.Context;
 
 import com.filedownloader.Constants;
-import com.filedownloader.PRDownloader;
-import com.filedownloader.PRDownloaderConfig;
+import com.filedownloader.FileDownloader;
+import com.filedownloader.FileDownloaderConfig;
 import com.filedownloader.database.AppDbHelper;
 import com.filedownloader.database.DbHelper;
 import com.filedownloader.database.NoOpsDbHelper;
@@ -24,14 +24,14 @@ public class ComponentHolder {
         return INSTANCE;
     }
 
-    public void init(Context context, PRDownloaderConfig config) {
+    public void init(Context context, FileDownloaderConfig config) {
         this.readTimeout = config.getReadTimeout();
         this.connectTimeout = config.getConnectTimeout();
         this.userAgent = config.getUserAgent();
         this.httpClient = config.getHttpClient();
         this.dbHelper = config.isDatabaseEnabled() ? new AppDbHelper(context) : new NoOpsDbHelper();
         if (config.isDatabaseEnabled()) {
-            PRDownloader.cleanUp(30);
+            FileDownloader.cleanUp(30);
         }
     }
 

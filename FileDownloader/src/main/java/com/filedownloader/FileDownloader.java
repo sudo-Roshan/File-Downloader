@@ -9,22 +9,22 @@ import com.filedownloader.request.DownloadRequestBuilder;
 import com.filedownloader.utils.Utils;
 
 /**
- * PRDownloader entry point.
+ * FileDownloader entry point.
  * You must initialize this class before use. The simplest way is to just do
- * {#code PRDownloader.initialize(context)}.
+ * {#code FileDownloader.initialize(context)}.
  */
-public class PRDownloader {
+public class FileDownloader {
 
     // Private constructor to prevent instantiation of this class
-    private PRDownloader() { }
+    private FileDownloader() { }
 
-    //Initializes PRDownloader with the default config.
+    //Initializes FileDownloader with the default config.
     public static void initialize(Context context) {
-        initialize(context, PRDownloaderConfig.newBuilder().build());
+        initialize(context, FileDownloaderConfig.newBuilder().build());
     }
 
-    // Initializes PRDownloader with the custom config.
-    public static void initialize(Context context, PRDownloaderConfig config) {
+    // Initializes FileDownloader with the custom config.
+    public static void initialize(Context context, FileDownloaderConfig config) {
         ComponentHolder.getInstance().init(context, config);
         DownloadRequestQueue.initialize();
     }
@@ -104,7 +104,7 @@ public class PRDownloader {
     }
 
     /**
-     * Shuts PRDownloader down
+     * Shuts FileDownloader down
      */
     public static void shutDown() {
         Core.shutDown();
